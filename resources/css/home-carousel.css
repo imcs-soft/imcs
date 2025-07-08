@@ -1,0 +1,106 @@
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Ocultar radios */
+.carousel-container input {
+    display: none;
+}
+
+/* Slides wrapper: 2 slides ⇒ width 200% */
+.slides-wrapper {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide ocupa la mitad */
+#carousel-slide-1:checked ~ .slides-wrapper {
+    transform: translateX(0);
+}
+#carousel-slide-2:checked ~ .slides-wrapper {
+    transform: translateX(-50%);
+}
+
+/* Cada slide muestra 3 tarjetas en fila */
+.slide {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+/* Tarjeta */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    flex: 1;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.card-content {
+    padding: 1rem;
+    flex: 1;
+}
+.card-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.125rem;
+}
+.card-content p {
+    margin: 0 0 0.25rem;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* Controles */
+.carousel-controls .control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+.carousel-controls .prev {
+    left: 1rem;
+}
+.carousel-controls .next {
+    right: 1rem;
+}
+
+/* Dots */
+.carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+}
+.carousel-dots .dot {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0 0.25rem;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#carousel-slide-1:checked ~ .carousel-dots .dot:nth-of-type(1),
+#carousel-slide-2:checked ~ .carousel-dots .dot:nth-of-type(2) {
+    background: #333;
+}
