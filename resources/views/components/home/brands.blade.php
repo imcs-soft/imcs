@@ -1,4 +1,4 @@
-<section class="brands-section py-12 bg-white">
+<section class="brands-section py-16 bg-white">
     <div class="container mx-auto px-4">
         <h2 class="text-2xl font-semibold text-center mb-8">Nuestros Partners</h2>
         <div class="flex flex-wrap items-center justify-center gap-8">
