@@ -1,5 +1,6 @@
 <x-app-layout>
     @push('styles')
+        @livewireStyles
         @vite(['resources/css/header-blur.css'])
     @endpush
 
@@ -44,4 +45,5 @@
 
     <!-- reseñas -->
     <x-home.reviews />
+    @livewireScripts
 </x-app-layout>
