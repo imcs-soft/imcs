@@ -36,5 +36,12 @@
     <livewire:layout.home-carousel-alt />
 
     <!-- brands -->
-    <x-brands />
+    <x-home.brands />
+
+    <!-- abaut-us -->
+    <x-home.abautus />
+
+
+    <!-- reseñas -->
+    <x-home.reviews />
 </x-app-layout>

@@ -1,5 +1,55 @@
-.app-footer {
+.app-footer-container {
     background: #ffffff;
     box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+}
+
+.app-footer {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.app-footer-title {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: .5rem;
+}
+
+.app-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.app-footer-list-entry {
+    margin-bottom: .5rem;
+}
+
+.app-footer-link {
+    color: #4B5563;
+    text-decoration: none;
+}
+
+.footer-back-button {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #333;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background .2s;
 }
 
