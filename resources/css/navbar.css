@@ -1,30 +1,3 @@
-/* public/css/navbar.css */
-
-/* Estado inicial: fondo blanco + sombra ligera */
-.navbar-default {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-/* Estado scrolled: fondo oscuro + sombra más profunda */
-.navbar-scrolled {
-    background-color: #ffffff;
-    box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border-bottom: 1px solid rgba(237, 242, 246, 0.2);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
 /* Color y transición de los enlaces */
 .navbar-link-text {
     color: #1f2937;
@@ -44,9 +17,4 @@
 
 .navbar-login-btn:hover {
     background-color: #FF5656;
-}
-
-/* Oculta elementos hasta que AlpineJS cargue */
-[x-cloak] {
-    display: none !important;
 }

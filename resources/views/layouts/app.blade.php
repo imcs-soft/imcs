@@ -12,28 +12,28 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite([
-            'resources/css/app.css',
-            'resources/css/navbar.css',
-            'resources/css/footer.css',
-            'resources/js/app.js',
-            'resources/js/navbar.js',
-            'resources/js/footer.js'
-            ])
+        @vite(['resources/css/app.css', 'resources/css/navbar.css', 'resources/js/app.js'])
+        @livewireStyles
+        @livewireScripts
+
+        @guest()
+            @vite(['resources/css/footer.css', 'resources/js/footer.js'])
+        @endguest
 
         <!-- Extras -->
         @stack('styles')
         @stack('scripts')
     </head>
     <body class="font-sans bg-light-gray antialiased">
-        <div class="min-h-screen ">
-            <livewire:layout.navigation />
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+    <x-app.navigation />
+
+    <main>
+        {{ $slot }}
+    </main>
+
+    @guest()
         <x-app.footer />
+    @endguest
     </body>
 </html>

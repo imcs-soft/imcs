@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
-Route::view('/cursos', 'coursos')->name('cursos');
+Route::view('/cursos', 'courses')->name('cursos');
+Route::view('/cursos/{curso}', 'courses.show')->name('curso');
+Route::view('/curso-estado/{curso}', 'courses.status')->name('curso-estado');
+Route::view('/mis-cursos', 'my-courses')->name('mis-cursos');
 Route::view('/fqa', 'fqa')->name('fqa');
 
 Route::view('dashboard', 'dashboard')

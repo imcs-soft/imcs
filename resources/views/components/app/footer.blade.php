@@ -4,7 +4,7 @@
             <!-- Logo izquierda -->
             <div>
                 <div class="flex items-center">
-                    <a href="{{ route('dashboard') }}" wire:navigate class="shrink-0">
+                    <a href="{{ route('home') }}" wire:navigate class="shrink-0">
                         <x-application-logo class="h-8 w-auto"/>
                     </a>
                     <span class="ml-4 text-2xl text-stone-800 font-bold">IMCS</span>
@@ -15,7 +15,7 @@
             <div>
                 <h4 class="app-footer-title">Quick Links</h4>
                 <ul class="app-footer-list">
-                    <li  class="app-footer-list-entry"><a href="{{ route('home') }}" class="app-footer-link">Home</a></li>
+                    <li  class="app-footer-list-entry"><a href="{{ route('home') }}" class="app-footer-link">Inicio</a></li>
                     <li  class="app-footer-list-entry"><a href="{{ route('cursos') }}" class="app-footer-link">Cursos</a></li>
                     <li  class="app-footer-list-entry"><a href="{{ route('fqa') }}" class="app-footer-link">FQA</a></li>
                     <li  class="app-footer-list-entry"><a href="#" class="app-footer-link">Blog</a></li>

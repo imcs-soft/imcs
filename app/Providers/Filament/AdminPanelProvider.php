@@ -55,7 +55,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationItems([
                 NavigationItem::make('Mi panel')
-                    ->url('/dashboard', shouldOpenInNewTab: false)
+                    ->url('/home', shouldOpenInNewTab: false)
                     ->icon('heroicon-o-presentation-chart-line')
                     ->sort(3),
 

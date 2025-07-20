@@ -84,7 +84,7 @@
 @endpush
 
 <!-- caruser -->
-<div class="carousel-wrapper relative w-full">
+<div class="carousel-wrapper px-10 relative w-full">
 
     {{-- 1. Área de scroll solo en este div --}}
     <div id="carousel-container" class="overflow-hidden">
