@@ -1,298 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Responsive Sidebar Menu</title>
-    <link href="./output.css" rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/navbar.css'])
-</head>
-<body class="bg-gray-100 flex h-screen">
+<x-app-layout>
+    <div class="py-20 space-y-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-sm font-medium text-gray-500">Usuarios registrados</h3>
+                <p class="mt-2 text-3xl font-bold text-gray-800">23</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-sm font-medium text-gray-500">Compradores</h3>
+                <p class="mt-2 text-3xl font-bold text-gray-800">23</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-sm font-medium text-gray-500">Curso más comprado</h3>
+                @if(empty($topCourse))
+                    <p class="mt-2 text-gray-500">Sin datos aún</p>
+                @else
+                    <p class="mt-2 text-xl font-semibold text-gray-800">{{ $topCourse->title }}</p>
+                    <p class="text-gray-500">{{ $topCourseCount }} compras</p>
+                @endif
+            </div>
+        </div>
 
-<!-- Sidebar a la derecha, oculto por defecto -->
-<aside id="sidebar"
-       class="fixed top-0 right-0 w-64 h-full bg-white p-4 shadow-lg
-                transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-    <div class="flex items-center justify-between mb-6">
-        <h1 class="text-2xl font-semibold text-gray-800">IMCS</h1>
-        <button id="closeSidebar" class="text-gray-500 hover:text-gray-700 focus:outline-none">
-            <i class="fas fa-times text-xl"></i>
-        </button>
+        {{-- 2. Listado de usuarios y compradores --}}
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            {{-- Usuarios registrados --}}
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-4 border-b">
+                    <h2 class="text-lg font-semibold text-gray-800">Usuarios registrados</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-left">
+                        <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">#</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">Nombre</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">Email</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">Registrado</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">1243423</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Nexxiii</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">nexiii@email.com</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">01-01-2025</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">124233423</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Abraham</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">abraham@email.com</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">01-01-2025</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">1243423</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Nexxiii</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">nexiii@email.com</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">01-01-2025</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">124233423</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Abraham</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">abraham@email.com</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">01-01-2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-3 bg-gray-50">
+                    <!-- $users->links() -->
+                </div>
+            </div>
+
+            {{-- Compradores --}}
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="px-6 py-4 border-b">
+                    <h2 class="text-lg font-semibold text-gray-800">Compradores recientes</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-left">
+                        <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">Usuario</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">Curso</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">Fecha de compra</th>
+                            <th class="px-4 py-2 text-sm font-medium text-gray-500">Monto</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">Abraham</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Ecografía</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">03-01-2025</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">Nexxii</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Ecografía</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">06-01-2025</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">Abraham</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Ecografía</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">03-01-2025</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">2</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 text-sm text-gray-700">Nexxii</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">Ecografía</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">06-01-2025</td>
+                                <td class="px-4 py-2 text-sm text-gray-700">2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-3 bg-gray-50">
+                    <!-- $buyers->links() -->
+                </div>
+            </div>
+
+        </div>
+
+        {{-- 3. Formulario de subida --}}
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Subir nuevo contenido</h2>
+            <form action="#" method="POST" enctype="multipart/form-data" class="space-y-4">
+                @csrf
+
+                <div>
+                    <label for="type" class="block text-sm font-medium text-gray-700">Tipo</label>
+                    <select id="type" name="type" required
+                            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500">
+                        <option value="course">Curso</option>
+                        <option value="resource">Recurso</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
+                    <input type="text" name="title" id="title" required
+                           class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500"/>
+                </div>
+
+                <div>
+                    <label for="author" class="block text-sm font-medium text-gray-700">Autor</label>
+                    <input type="text" name="author" id="author" required
+                           class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500"/>
+                </div>
+
+                <div>
+                    <label for="description" class="block text-sm font-medium text-gray-700">Descripción</label>
+                    <textarea name="description" id="description" rows="4" required
+                              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500"></textarea>
+                </div>
+
+                <div>
+                    <label for="file" class="block text-sm font-medium text-gray-700">Archivo (PDF/ZIP)</label>
+                    <input type="file" name="file" id="file" required accept=".pdf,.zip"
+                           class="mt-1 block w-full text-gray-700"/>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit"
+                            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md">
+                        Subir contenido
+                    </button>
+                </div>
+            </form>
+        </div>
+
     </div>
-    <nav>
-        <ul class="space-y-2">
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-100 hover:text-purple-700 rounded-md">
-                    <i class="far fa-calendar-alt mr-3"></i>
-                    Calendar
-                    <span class="ml-auto text-xs bg-purple-200 text-purple-700 px-2 py-0.5 rounded-full">PRO</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-100 hover:text-purple-700 rounded-md">
-                    <i class="fas fa-tasks mr-3"></i>
-                    Kanban
-                    <span class="ml-auto text-xs bg-purple-200 text-purple-700 px-2 py-0.5 rounded-full">PRO</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                    <i class="fas fa-cog mr-3"></i>
-                    Account Settings
-                    <i class="fas fa-chevron-right ml-auto text-sm"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                    <i class="fas fa-lock mr-3"></i>
-                    Authentications
-                    <i class="fas fa-chevron-right ml-auto text-sm"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                    <i class="fas fa-ellipsis-h mr-3"></i>
-                    Misc
-                    <i class="fas fa-chevron-right ml-auto text-sm"></i>
-                </a>
-            </li>
-            <li class="mt-4 pt-4 border-t border-gray-200">
-                <span class="text-xs font-semibold text-gray-500 uppercase px-4">Components</span>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 bg-purple-50 text-purple-700 rounded-md font-semibold">
-                    <i class="fas fa-grip-horizontal mr-3"></i>
-                    Cards
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                    <i class="fas fa-desktop mr-3"></i>
-                    User interface
-                    <i class="fas fa-chevron-right ml-auto text-sm"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                    <i class="fas fa-expand-alt mr-3"></i>
-                    Extended UI
-                    <i class="fas fa-chevron-right ml-auto text-sm"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">
-                    <i class="fas fa-icons mr-3"></i>
-                    Boxicons
-                </a>
-            </li>
-        </ul>
-    </nav>
-</aside>
-
-<!-- Contenido principal -->
-<div class="flex-1 flex flex-col">
-
-    <!-- navbar -->
-    <nav class="bg-white navbar-default p-4 shadow-md flex items-center justify-between">
-        <div class="md:hidden">
-            <br>
-        </div>
-        <div class="hidden sm:flex sm:items-center sm:ms-6 space-x-8 text-lg">
-            <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
-                <span class="navbar-link-text">Home</span>
-            </x-nav-link>
-            <x-nav-link :href="route('cursos')" :active="request()->routeIs('cursos')" wire:navigate>
-                <span class="navbar-link-text">Cursos</span>
-            </x-nav-link>
-            <x-nav-link :href="route('fqa')" :active="request()->routeIs('fqa')" wire:navigate>
-                <span class="navbar-link-text">FQA</span>
-            </x-nav-link>
-        </div>
-        <button id="hamburger" class="justify-end text-gray-500 hover:text-gray-700 focus:outline-none">
-            <i class="fas fa-bars text-xl"></i>
-        </button>
-    </nav>
-
-    <!-- Main -->
-    <main class="flex-1 p-6 overflow-y-auto">
-        <h2 class="text-3xl font-bold mb-6">Cards</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Ejemplo de card -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-
-            <!-- Repite aquÃ­ tus otras cards -->
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Ejemplo de card -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-
-            <!-- Repite aquÃ­ tus otras cards -->
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Ejemplo de card -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/600x300/87CEEB/ffffff?text=Orange"
-                     alt="Orange Glass"
-                     class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Card title</h3>
-                    <p class="text-gray-600 mb-4">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <a href="#"
-                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                        Go somewhere
-                    </a>
-                </div>
-            </div>
-
-            <!-- Repite aquÃ­ tus otras cards -->
-        </div>
-
-    </main>
-</div>
-
-<script>
-    const sidebar      = document.getElementById('sidebar');
-    const hamburger    = document.getElementById('hamburger');
-    const closeSidebar = document.getElementById('closeSidebar');
-
-    // Mostrar/ocultar sidebar
-    hamburger.addEventListener('click', () => {
-        sidebar.classList.toggle('translate-x-full');
-    });
-    closeSidebar.addEventListener('click', () => {
-        sidebar.classList.add('translate-x-full');
-    });
-</script>
-</body>
-</html>
+</x-app-layout>

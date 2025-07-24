@@ -4,7 +4,6 @@
 
 <section id="about-us">
     <div class="container">
-        {{-- Columna izquierda: About Us --}}
         <div>
             <h2>About Us</h2>
             <p>
@@ -21,12 +20,11 @@
             </p>
         </div>
 
-        {{-- Columna derecha: Reproductor de video --}}
+
         <div>
-            <video controls poster="/videos/intro-poster.png">
-                <source src="/videos/intro.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
+            <iframe class="rounded w-72 sm:w-[420px] h-34 sm:h-[315px]"
+                    src="https://www.youtube.com/embed/lMCyiLSwGJM?si=KdjeN8AiJ_vG9PCg?autoplay=1&mute=1">
+            </iframe>
         </div>
     </div>
 </section>

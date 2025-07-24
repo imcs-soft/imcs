@@ -72,7 +72,7 @@
             {{-- Info & progreso --}}
             <div class="bg-white p-4 sm:p-6 rounded-lg shadow space-y-4">
                 <div class="flex items-center space-x-3">
-                    <img src="https://via.placeholder.com/40" alt="Instructor" class="w-10 h-10 rounded-full"/>
+                    <img src="https://lh3.googleusercontent.com/4UA8c4P2KtHiM16UPnon-TgBH7nOdD3ETLxYPXShFaFBekp6Y3wgdV_Ca8QgWE_pdkiB2PtTuY-4UZN3f3AI9YBBgr7Ylke2P-qyVQMay5DX6ekfxNiLr739SvRRq7uiwKUMB51JvBnjQyMWZVJVhW0tGjFmKDL7eWS-U0CbLAWb7Bv5ek7DuQ=w1280" alt="Instructor" class="w-10 h-10 rounded-full"/>
                     <div>
                         <h3 class="text-sm sm:text-base font-medium" x-text="title"></h3>
                         <p class="text-xs text-gray-500" x-text="instructor"></p>
@@ -138,12 +138,12 @@
         <script>
             function courseData() {
                 return {
-                    title: 'Fundamentos de pseudocódigo',
+                    title: 'Fundamentos de Ecografía',
                     instructor: 'Víctor Arana Flores',
                     modules: [
                         {
                             title: 'Módulo 1: Introducción',
-                            desc: 'Conoce los conceptos básicos.',
+                            desc: 'Aprende los principios básicos de la ecografía médica y su aplicación en diferentes áreas clínicas.',
                             open: true,
                             completed: false,
                             topics: [
@@ -158,18 +158,18 @@
                             quizPassed: false
                         },
                         {
-                            title: 'Módulo 2: Conceptos básicos',
-                            desc: 'Variables y tipos de datos.',
+                            title: 'Módulo 2: Fundamentos técnicos',
+                            desc: 'Tipos de ecógrafos.',
                             open: false,
                             completed: false,
                             topics: [
-                                { title: '2.1 Variables', video: 'https://www.w3schools.com/html/mov_bbb.mp4', completed: false },
-                                { title: '2.2 Tipos de datos', video: 'https://www.w3schools.com/html/movie.mp4', completed: false }
+                                { title: '2.1 Principios físicos del ultrasonido', video: 'https://www.w3schools.com/html/mov_bbb.mp4', completed: false },
+                                { title: '2.2 Tipos de ecógrafos', video: 'https://www.w3schools.com/html/movie.mp4', completed: false }
                             ],
                             quiz: {
-                                question: '¿Qué es una variable?',
-                                options: ['Un dato fijo','Un contenedor de datos','Un ciclo'],
-                                answer: 'Un contenedor de datos'
+                                question: '¿Qué es una ecografía médica?',
+                                options: ['Un examen de rayos X','Un procedimiento quirúrgico','Una técnica de imagen que utiliza ultrasonido'],
+                                answer: 'Una técnica de imagen que utiliza ultrasonido'
                             },
                             quizPassed: false
                         }

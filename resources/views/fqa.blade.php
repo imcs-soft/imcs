@@ -5,7 +5,7 @@
 
     <br>
     <br>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-16">
         <h2 class="text-3xl md:text-4xl font-bold text-dark-text text-center mb-10 md:mb-12">Preguntas Frecuentes <span
                 class="text-accent-blue"> (FAQ)</span></h2>
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">

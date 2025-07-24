@@ -34,7 +34,7 @@
     </header>
 
     <!-- carusel de cursos -->
-    <livewire:layout.home-carousel-alt />
+    <x-home.carousel />
 
     <!-- brands -->
     <x-home.brands />
