@@ -12,13 +12,9 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/css/navbar.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
         @livewireScripts
-
-        @guest()
-            @vite(['resources/css/footer.css', 'resources/js/footer.js'])
-        @endguest
 
         <!-- Extras -->
         @stack('styles')
@@ -27,13 +23,10 @@
     <body class="font-sans bg-light-gray antialiased">
 
     <x-app.navigation />
-
-    <main>
+    <main class="pt-16 bg-white">
         {{ $slot }}
     </main>
 
-    @guest()
-        <x-app.footer />
-    @endguest
+    <x-app.footer />
     </body>
 </html>

@@ -28,5 +28,9 @@ export default {
         },
     },
 
-    plugins: [require('preline/plugin'),forms, require('flowbite/plugin')],
+    plugins: [
+        require('preline/plugin'),
+        forms,
+        require('flowbite/plugin'),
+    ],
 };

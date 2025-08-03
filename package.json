@@ -15,6 +15,7 @@
         "vite": "^7.0.3"
     },
     "dependencies": {
+        "@tailwindcss/line-clamp": "^0.4.4",
         "flowbite": "^3.1.2",
         "flyonui": "^2.3.0",
         "preline": "^2.4.1"

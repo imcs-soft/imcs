@@ -62,3 +62,53 @@
     color: #666;
     text-align: left;
 }
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+    #reviews .reviews-container {
+        height: auto; /* Permite que crezca según el contenido */
+        padding: 1rem;
+    }
+
+    #reviews .review {
+        position: static; /* Elimina centrado absoluto */
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        opacity: 1 !important; /* Mostrar todas las reseñas si usas carrusel solo en desktop */
+        padding: 1rem 0;
+    }
+
+    #reviews .review img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    #reviews .review .text-wrapper {
+        margin-left: 0;
+        max-height: none;
+        overflow: visible;
+    }
+
+    #reviews .review .text-wrapper .quote {
+        -webkit-line-clamp: unset; /* Mostrar texto completo */
+    }
+}
+
+@media (max-width: 480px) {
+    #reviews .review img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #reviews .review .text-wrapper .quote {
+        font-size: 1rem;
+    }
+
+    #reviews .review .text-wrapper .author {
+        font-size: 0.75rem;
+    }
+}
+
