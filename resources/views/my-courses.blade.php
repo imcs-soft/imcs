@@ -1,60 +1,140 @@
 <x-app-layout>
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 px-6 mt-24">
-        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <li class="overflow-hidden">
-                <a class="block" href="{{ route('curso-estado', 'medicina-interna-actualizada') }}">
-                    <figure>
-                        <img class="rounded-lg w-full aspect-video object-cover object-center" src="https://imgs.search.brave.com/nYiNtlGH1Qc7Z73X0UVrDSInf6JiN0k0Wz-iRBrnteY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/cGx1cy5lcy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wNS9B/Y3JlZGl0YWRvLXBv/ci5wbmc" alt="Curso completo de PHP 8 y MySQL 8 desde cero">
-                    </figure>
-                    <h2 class="mt-1 truncate">Ecografía General</h2>
-                </a>
-            </li>
-            <li class="overflow-hidden">
-                <a class="block" href="{{ route('curso-estado', 'cardiologia-intervencionista') }}">
-                    <figure>
-                        <img class="rounded-lg w-full aspect-video object-cover object-center" src="https://imgs.search.brave.com/nYiNtlGH1Qc7Z73X0UVrDSInf6JiN0k0Wz-iRBrnteY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/cGx1cy5lcy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wNS9B/Y3JlZGl0YWRvLXBv/ci5wbmc" alt="Laravel Eloquent: Relaciones">
-                    </figure>
-                    <h2 class="mt-1 truncate">Ecografía Obstétrica y Ginecológica</h2>
+    <section id="courses-section" class="py-12">
+        <div class="container mx-auto px-4 space-y-12">
 
-                </a>
-            </li>
-            <li class="overflow-hidden">
-                <a class="block" href="{{ route('curso-estado', 'neurologia-clinica') }}">
-                    <figure>
-                        <img class="rounded-lg w-full aspect-video object-cover object-center" src="https://imgs.search.brave.com/nYiNtlGH1Qc7Z73X0UVrDSInf6JiN0k0Wz-iRBrnteY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/cGx1cy5lcy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wNS9B/Y3JlZGl0YWRvLXBv/ci5wbmc" alt="Curso Tailwind desde cero">
-                    </figure>
-                    <h2 class="mt-1 truncate">Ecografía Vascular Periférica</h2>
-                </a>
-            </li>
-            <li class="overflow-hidden">
-                <a class="block" href="{{ route('curso-estado', 'neurologia-clinica') }}">
-                    <figure>
-                        <img class="rounded-lg w-full aspect-video object-cover object-center" src="https://imgs.search.brave.com/nYiNtlGH1Qc7Z73X0UVrDSInf6JiN0k0Wz-iRBrnteY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/cGx1cy5lcy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wNS9B/Y3JlZGl0YWRvLXBv/ci5wbmc" alt="Curso Tailwind desde cero">
-                    </figure>
-                    <h2 class="mt-1 truncate">Ecografía Vascular Periférica</h2>
-                </a>
-            </li>
-            <li class="overflow-hidden">
-                <a class="block" href="{{ route('curso-estado', 'neurologia-clinica') }}">
-                    <figure>
-                        <img class="rounded-lg w-full aspect-video object-cover object-center" src="https://imgs.search.brave.com/nYiNtlGH1Qc7Z73X0UVrDSInf6JiN0k0Wz-iRBrnteY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/cGx1cy5lcy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wNS9B/Y3JlZGl0YWRvLXBv/ci5wbmc" alt="Curso Tailwind desde cero">
-                    </figure>
-                    <h2 class="mt-1 truncate">Ecografía Vascular Periférica</h2>
-                </a>
-            </li>
-            <li class="overflow-hidden">
-                <a class="block" href="{{ route('curso-estado', 'neurologia-clinica') }}">
-                    <figure>
-                        <img class="rounded-lg w-full aspect-video object-cover object-center" src="https://imgs.search.brave.com/nYiNtlGH1Qc7Z73X0UVrDSInf6JiN0k0Wz-iRBrnteY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/cGx1cy5lcy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wNS9B/Y3JlZGl0YWRvLXBv/ci5wbmc" alt="Curso Tailwind desde cero">
-                    </figure>
-                    <h2 class="mt-1 truncate">Ecografía Vascular Periférica</h2>
-                </a>
-            </li>
-        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+                {{-- Tarjeta 1 --}}
+                <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
+                    <img src="https://imgs.search.brave.com/yw61yVhSuQdGcrkzdSSOLceudvLH-e13SeXIlbqlhzI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXRo/YXMuZXMvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDgvZWNv/Z3JhZmlhLTEtODQw/eDU4OC5qcGc" alt="Ecografía General" class="w-full h-52 object-cover">
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                        <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: 100%"></div>
+                    </div>
+                    <div class="flex flex-col flex-grow p-4">
+                        <h3 class="text-lg font-semibold mb-2">Ecografía General</h3>
 
-        <div class="mt-8">
-            <div>
+                        <div class="text-sm text-gray-600 space-y-1 mb-4">
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-clock"></i> 4 semanas
+                            </p>
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i> Presencial (Ecuador)
+                            </p>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="#" class="block text-center bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">
+                                Continura el curso
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{-- Tarjeta 2 --}}
+                <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
+                    <img src="https://imgs.search.brave.com/yw61yVhSuQdGcrkzdSSOLceudvLH-e13SeXIlbqlhzI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXRo/YXMuZXMvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDgvZWNv/Z3JhZmlhLTEtODQw/eDU4OC5qcGc" alt="Ecografía Obstétrica y Ginecológica" class="w-full h-52 object-cover">
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                        <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: 45%"></div>
+                    </div>
+                    <div class="flex flex-col flex-grow p-4">
+                        <h3 class="text-lg font-semibold mb-2">Ecografía Obstétrica y Ginecológica</h3>
+
+                        <div class="text-sm text-gray-600 space-y-1 mb-4">
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-clock"></i> 6 semanas
+                            </p>
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i> Presencial (Ecuador)
+                            </p>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="#" class="block text-center bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">
+                                Continura el curso
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Tarjeta 3 --}}
+                <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
+                    <img src="https://imgs.search.brave.com/yw61yVhSuQdGcrkzdSSOLceudvLH-e13SeXIlbqlhzI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXRo/YXMuZXMvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDgvZWNv/Z3JhZmlhLTEtODQw/eDU4OC5qcGc" alt="Ecografía Vascular Periférica" class="w-full h-52 object-cover">
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                        <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: 5%"></div>
+                    </div>
+                    <div class="flex flex-col flex-grow p-4">
+                        <h3 class="text-lg font-semibold mb-2">Ecografía Vascular Periférica</h3>
+
+                        <div class="text-sm text-gray-600 space-y-1 mb-4">
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-clock"></i> 3 semanas
+                            </p>
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i> Presencial (Ecuador)
+                            </p>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="#" class="block text-center bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">
+                                Continura el curso
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Tarjeta 4 --}}
+                <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
+                    <img src="https://imgs.search.brave.com/yw61yVhSuQdGcrkzdSSOLceudvLH-e13SeXIlbqlhzI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXRo/YXMuZXMvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDgvZWNv/Z3JhZmlhLTEtODQw/eDU4OC5qcGc" alt="Ecografía General" class="w-full h-52 object-cover">
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                        <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: 100%"></div>
+                    </div>
+                    <div class="flex flex-col flex-grow p-4">
+                        <h3 class="text-lg font-semibold mb-2">Ecografía General</h3>
+
+                        <div class="text-sm text-gray-600 space-y-1 mb-4">
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-clock"></i> 4 semanas
+                            </p>
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i> Presencial (Ecuador)
+                            </p>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="#" class="block text-center bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">
+                                Continura el curso
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{-- Tarjeta 5 --}}
+                <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
+                    <img src="https://imgs.search.brave.com/yw61yVhSuQdGcrkzdSSOLceudvLH-e13SeXIlbqlhzI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXRo/YXMuZXMvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDgvZWNv/Z3JhZmlhLTEtODQw/eDU4OC5qcGc" alt="Ecografía Obstétrica y Ginecológica" class="w-full h-52 object-cover">
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                        <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500" style="width: 45%"></div>
+                    </div>
+                    <div class="flex flex-col flex-grow p-4">
+                        <h3 class="text-lg font-semibold mb-2">Ecografía Obstétrica y Ginecológica</h3>
+
+                        <div class="text-sm text-gray-600 space-y-1 mb-4">
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-clock"></i> 6 semanas
+                            </p>
+                            <p class="flex items-center gap-1">
+                                <i class="fas fa-map-marker-alt"></i> Presencial (Ecuador)
+                            </p>
+                        </div>
+
+                        <div class="mt-auto">
+                            <a href="#" class="block text-center bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">
+                                Continura el curso
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
-    </div>
+    </section>
+    <br>
+    <br>
+    <br>
 </x-app-layout>

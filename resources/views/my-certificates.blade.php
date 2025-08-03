@@ -1,7 +1,6 @@
 <x-app-layout>
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-
+    <section class="py-10 min-h-screen">
+        <div class="max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">
                 Mis Certificados
             </h1>
@@ -234,4 +233,8 @@
 
         </div>
     </section>
+    <br>
+    <br>
+    <br>
+    <br>
 </x-app-layout>
