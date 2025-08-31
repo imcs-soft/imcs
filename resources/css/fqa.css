@@ -1,0 +1,9 @@
+.faq-answer-container {
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    overflow: hidden; /* Importante para que la altura de 0 oculte el contenido */
+}
+
+.faq-answer-container.open {
+    opacity: 1;
+}

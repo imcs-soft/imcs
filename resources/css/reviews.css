@@ -1,0 +1,114 @@
+/* Contenedor centrado y altura = alto de la foto */
+#reviews .reviews-container {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    height: 200px;       /* coincide con el alto de la imagen */
+    overflow: hidden;
+}
+
+/* Cada reseña ocupa 100% del contenedor */
+#reviews .review {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+#reviews .review.active {
+    opacity: 1;
+}
+
+/* Imagen 200×200 */
+#reviews .review img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Wrapper de texto: permite multilínea pero no expande altura */
+#reviews .review .text-wrapper {
+    margin-left: 3rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+/* Quote multilínea con límite de líneas */
+#reviews .review .text-wrapper .quote {
+    margin: 0;
+    font-size: 1.125rem;
+    color: #333;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;        /* máximo 3 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Autor debajo */
+#reviews .review .text-wrapper .author {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    color: #666;
+    text-align: left;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+    #reviews .reviews-container {
+        height: auto; /* Permite que crezca según el contenido */
+        padding: 1rem;
+    }
+
+    #reviews .review {
+        position: static; /* Elimina centrado absoluto */
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        opacity: 1 !important; /* Mostrar todas las reseñas si usas carrusel solo en desktop */
+        padding: 1rem 0;
+    }
+
+    #reviews .review img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    #reviews .review .text-wrapper {
+        margin-left: 0;
+        max-height: none;
+        overflow: visible;
+    }
+
+    #reviews .review .text-wrapper .quote {
+        -webkit-line-clamp: unset; /* Mostrar texto completo */
+    }
+}
+
+@media (max-width: 480px) {
+    #reviews .review img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #reviews .review .text-wrapper .quote {
+        font-size: 1rem;
+    }
+
+    #reviews .review .text-wrapper .author {
+        font-size: 0.75rem;
+    }
+}
+

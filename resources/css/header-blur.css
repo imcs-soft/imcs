@@ -1,0 +1,21 @@
+/* public/css/header-blur.css */
+.header-with-blur {
+    position: relative;
+    overflow: hidden;
+    background: url('https://p4.wallpaperbetter.com/wallpaper/704/880/885/abstract-abstraction-biology-chemistry-wallpaper-preview.jpg') center/cover no-repeat;
+}
+
+.header-with-blur::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    background-color: rgba(73, 73, 83, 0.6);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}

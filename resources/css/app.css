@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+.bg-primary-red { background-color: #FF5656; }
+.text-primary-red { color: #FF5656; }
+.bg-light-gray { background-color: #EDF2F6; }
+.text-light-gray { color: #EDF2F6; }
+.bg-accent-blue { background-color: #6A7EFC; }
+.text-accent-blue { color: #6A7EFC; }
+.bg-dark-gray { background-color: #494953; }
+.text-dark-gray { color: #494953; }

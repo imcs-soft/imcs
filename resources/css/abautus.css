@@ -1,0 +1,33 @@
+#about-us {
+    padding: 4rem 1rem;
+    background: #F9FAFB;
+}
+#about-us .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+@media(min-width: 768px) {
+    #about-us .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+#about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+}
+#about-us p {
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+#about-us video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: block;
+}
