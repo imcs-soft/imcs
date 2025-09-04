@@ -10,9 +10,9 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $cursos = Course::withCount("modules")->take(3)->get();
+        $courses = Course::withCount("modules")->take(3)->get();
         $reviews = Review::withCount("user")->take(10)->get();
-        return view('home')->with('cursos', $cursos)->with('reviews', $reviews);
+        return view('home')->with('courses', $courses)->with('reviews', $reviews);
 
         // TODO: Implement __invoke() method.
     }

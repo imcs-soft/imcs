@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    public function index(){
+    public function index()
+    {
+        $presencial = Course::withCount("modules")
+            ->where("modality", "=", "presencial")
+            ->paginate(3, ["*"], "presencial");
 
-        $presencial = Course::withCount("modules")->where("modality", "=", "presencial")->paginate(3);
-        $online = Course::withCount("modules")->where("modality", "=", "online")->paginate(3);
+        $online = Course::withCount("modules")
+            ->where("modality", "=", "online")
+            ->paginate(3, ["*"], "online");
+
         return view("courses", ["presencial" => $presencial, "online" => $online]);
     }
 }

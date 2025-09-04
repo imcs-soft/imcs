@@ -19,7 +19,7 @@
     <br>
     <br>
 
-    <x-home.courses :cursos="$cursos"/>
+    <x-home.courses :courses="$courses"/>
 
     <br>
     <br>

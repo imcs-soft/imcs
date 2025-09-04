@@ -4,23 +4,22 @@
 
             {{-- 1. Cursos Presenciales --}}
             <div id="precencial">
-                <h2 class="text-2xl font-semibold mb-6">Cursos Presenciales</h2>
+                <h2 class="text-2xl text-center md:px-6 md:text-left font-semibold mb-6">Cursos Presenciales</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
-                    {{-- Tarjeta 1 --}}
-                    @foreach($presencial as $curso)
+                    @foreach($presencial as $course)
                         <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
                             <img src="https://imgs.search.brave.com/yw61yVhSuQdGcrkzdSSOLceudvLH-e13SeXIlbqlhzI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXRo/YXMuZXMvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDgvZWNv/Z3JhZmlhLTEtODQw/eDU4OC5qcGc" alt="Ecografía General" class="w-full h-52 object-cover">
 
                             <div class="flex flex-col flex-grow p-4">
-                                <h3 class="text-lg font-semibold mb-2">{{$curso->title}}</h3>
+                                <h3 class="text-lg font-semibold mb-2">{{$course->title}}</h3>
 
                                 <div class="text-sm text-gray-600 space-y-1 mb-4">
                                     <p class="flex items-center gap-1">
-                                        <i class="fas fa-clock"></i>{{$curso->modules_count}} Modulos
+                                        <i class="fas fa-clock"></i>{{$course->modules_count}} Modulos
                                     </p>
                                     <p class="flex items-center gap-1">
                                         <i class="fas fa-map-marker-alt"></i>
-                                        @if($curso->modality == "online")
+                                        @if($course->modality == "online")
                                             Presencial <span class="curso_modality">*Disponible en Ecuador</span>
                                         @else
                                             Online
@@ -40,27 +39,33 @@
 
             </div>
 
-            {{$presencial->links()}}
+            <div class="pt-4 px-7">
+                {{$presencial->links()}}
+            </div>
+
+            <div class="py-">
+                <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded-sm md:my-10 dark:bg-gray-700">
+            </div>
 
             {{-- 2. Cursos Online --}}
             <div id="online">
-                <h2 class="text-2xl font-semibold mb-6">Cursos Online</h2>
+                <h2 class="text-2xl text-center md:px-6 md:text-left font-semibold mb-6">Cursos Online</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
                     {{-- Tarjeta 1 --}}
-                    @foreach($online as $curso)
+                    @foreach($online as $course)
                         <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
                             <img src="https://imgs.search.brave.com/yw61yVhSuQdGcrkzdSSOLceudvLH-e13SeXIlbqlhzI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92aXRo/YXMuZXMvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDgvZWNv/Z3JhZmlhLTEtODQw/eDU4OC5qcGc" alt="Ecografía General" class="w-full h-52 object-cover">
 
                             <div class="flex flex-col flex-grow p-4">
-                                <h3 class="text-lg font-semibold mb-2">{{$curso->title}}</h3>
+                                <h3 class="text-lg font-semibold mb-2">{{$course->title}}</h3>
 
                                 <div class="text-sm text-gray-600 space-y-1 mb-4">
                                     <p class="flex items-center gap-1">
-                                        <i class="fas fa-clock"></i>{{$curso->modules_count}} Modulos
+                                        <i class="fas fa-clock"></i>{{$course->modules_count}} Modulos
                                     </p>
                                     <p class="flex items-center gap-1">
                                         <i class="fas fa-map-marker-alt"></i>
-                                        @if($curso->modality == "online")
+                                        @if($course->modality == "online")
                                             Presencial <span class="curso_modality">*Disponible en Ecuador</span>
                                         @else
                                             Online
@@ -81,11 +86,17 @@
 
             </div>
 
-            {{$online->links()}}
+            <div class="pt-4 px-7">
+                {{$online->links()}}
+            </div>
+
+            <div class="py-2">
+                <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded-sm md:my-10 dark:bg-gray-700">
+            </div>
 
             {{-- 3. Recursos Didácticos --}}
             <div id="didacticos">
-                <h2 class="text-2xl font-semibold mb-6">Recursos Didácticos</h2>
+                <h2 class="text-2xl text-center md:px-6 md:text-left font-semibold mb-6">Recursos Didácticos</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
                     {{-- Tarjeta 1 --}}
                     <div class="flex flex-col bg-white rounded-lg shadow overflow-hidden h-full">
