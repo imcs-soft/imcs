@@ -32,7 +32,7 @@ new #[Layout('layouts.guest')] class extends Component
 
         Auth::login($user);
 
-        redirect()->route('home')
+        redirect()->route('home');
     }
 }; ?>
 

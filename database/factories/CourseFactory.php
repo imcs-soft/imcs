@@ -4,11 +4,10 @@ namespace Database\Factories;
 
 use App\Enums\CourseModality;
 use App\Models\Course;
-use App\Models\User;
+use App\Models\Resource;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Nette\Utils\Random;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course>
@@ -24,6 +23,37 @@ class CourseFactory extends Factory
                 'user_id' => 1,
                 'course_id' => $course->id
             ]);
+
+            $t = mt_rand(4, 15);
+            for ($i = 1; $i < $t; $i++) {
+                $title = $this->faker->text(mt_rand(15, 50));
+                $moduleId = DB::table('modules')->insertGetId([
+                    "title" => $title,
+                    "slug" => Str::slug($title),
+                    "description" => $this->faker->text(mt_rand(50, 150)),
+                    "course_id" => $course->id,
+                    "position" => $i,
+                ]);
+
+                $tt = mt_rand(1, 10);
+                for ($j = 1; $j < $tt; $j++) {
+                    DB::table('videos')->insertGetId([
+                        "title" => $this->faker->text(50),
+                        "description" => $this->faker->paragraph(),
+                        "video_url" => 'https://www.w3schools.com/html/mov_bbb.mp4',
+                        "position" => $j,
+                        "module_id" => $moduleId,
+                    ]);
+                }
+            }
+
+            $rt = mt_rand(1, 4);
+            for ($j = 1; $j < $rt; $j++) {
+                DB::table('course_resource')->insertGetId([
+                    'course_id' => $course->id,
+                    'resource_id' => mt_rand(1, Resource::all()->count()),
+                ]);
+            }
         });
     }
 

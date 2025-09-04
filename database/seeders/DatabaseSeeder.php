@@ -27,10 +27,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
         Instructor::factory(10)->create();
-        Course::factory(10)->create();
-        Module::factory(10)->create();
-        Video::factory(10)->create();
         Resource::factory(10)->create();
+        Course::factory(10)->create();
+        //::factory(10)->create();
+        //Video::factory(10)->create();
         Review::factory(10)->create();
         Certificate::factory(10)->create();
     }

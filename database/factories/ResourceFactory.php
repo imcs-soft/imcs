@@ -22,7 +22,7 @@ class ResourceFactory extends Factory
     {
         return [
             'name' => $this->faker->text(mt_rand(15, 50)),
-            'url_path' => "pdfUrl='https://aulaginecologia.com/wp-content/uploads/2023/10/PRINCIPIOS-DE-ECOGRAFIA.pdf#toolbar=0&navpanes=0';",
+            'url_path' => 'https://aulaginecologia.com/wp-content/uploads/2023/10/PRINCIPIOS-DE-ECOGRAFIA.pdf#toolbar=0&navpanes=0',
             'file_type' => ResourceType::PDF,
         ];
     }
