@@ -72,14 +72,6 @@
                                             @endif
                                         </a>
                                     @endif
-
-                                    @if($curso->progress_percentage > 0)
-                                        <div class="text-center">
-                                            <span class="text-xs text-gray-500">
-                                                Última vez: hace 2 días
-                                            </span>
-                                        </div>
-                                    @endif
                                 </div>
                             </div>
                         </div>

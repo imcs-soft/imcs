@@ -341,7 +341,7 @@
         @keydown.window.escape="closeResourceModal(); closeQuizModal()"
     >
 
-        {{-- ÃREA PRINCIPAL --}}
+        {{-- AREA PRINCIPAL --}}
         <div class="lg:col-span-2 pt-14 space-y-6">
 
             <div class="w-full aspect-video bg-black rounded-lg overflow-hidden shadow">
